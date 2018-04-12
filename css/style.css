@@ -27,6 +27,11 @@ header h1 {
   margin-top: 0;
   padding-top: 10vh;
   font-size: 3em;
+  opacity: 0;
+}
+
+header h2 {
+  opacity: 0;
 }
 
 article {
@@ -112,7 +117,7 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
-  clear: both;
+  transform: translate3d(0, 100%, 0);
 }
 
 .logo {
@@ -323,6 +328,7 @@ a.cta {
 .fadeInDown {
   animation-name: fadeInDown;
   animation-duration: 1.5s;
+  animation-fill-mode: both;
 }
 
 @keyframes fadeIn {
@@ -339,43 +345,7 @@ a.cta {
   animation-name: fadeIn;
   animation-duration: 1.5s;
   animation-delay: 1.5s;
-  animation-fill-mode: backwards;
-}
-
-@keyframes lightSpeedIn {
-  from {
-    transform: translate3d(100%, 0, 0) skewX(-30deg);
-    opacity: 0;
-  }
-
-  60% {
-    transform: skewX(20deg);
-    opacity: 1;
-  }
-
-  80% {
-    transform: skewX(-5deg);
-    opacity: 1;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-.lightSpeedIn {
-  animation-name: lightSpeedIn;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-}
-
-.lightSpeedIn2 {
-  animation-name: lightSpeedIn;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
+  animation-fill-mode: both;
 }
 
 @keyframes slideInUp {
@@ -393,7 +363,7 @@ a.cta {
   animation-name: slideInUp;
   animation-duration: 2s;
   animation-delay: 3s;
-  animation-fill-mode: backwards;
+  animation-fill-mode: both;
 }
 
 @keyframes pulse {

@@ -6,11 +6,12 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" >
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <script src="js/eco.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
   <header>
-    <h1 class="fadeInDown">Experience the world of Audi</h1>
-    <h2 class="fadeIn">Experience our theme worlds and be fascinated.</h2>
+    <h1>Experience the world of Audi</h1>
+    <h2>Experience our theme worlds and be fascinated.</h2>
   </header>
   <article>
     <h2>New quality of life</h2>
@@ -40,13 +41,28 @@
     </div>
   </div>
   </div>
-  <footer class="slideInUp">
-    <a class="cta pulse" href="https://www.audi.com/en.html">www.audi.com</a>
-    <a href="https://www.audi.com/en.html"><img class="logo" src="img/logo.png"></a>
+  <footer>
+    <a class="cta" onclick="eco.open('https://www.audi.com/en.html');">www.audi.com</a>
+    <a onclick="eco.open('https://www.audi.com/en.html');"><img class="logo" src="img/logo.png"></a>
   </footer>
 
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="slick/slick.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+
+  <script type="text/javascript">
+
+  eco.config.app('economist').advertiser('audi').campaign('experience the world of audi').issue('20180430');
+
+  eco.impression.phone('img/tracking-pixel.jpg?ord=[timestamp]');
+  eco.impression.tablet('img/tracking-pixel.jpg?ord=[timestamp]');
+  eco.impression.timestamp('[timestamp]');
+
+  eco.queue.addTask(init);
+
+  //eco.ad.debug();
+  eco.ad.run();
+
+  </script>
 </body>
 </html>

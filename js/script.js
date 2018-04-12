@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 window.addEventListener("load", setHeightVideo);
 window.addEventListener("resize", setHeightVideo);
+window.addEventListener("resize", moveLogo);
 
 function setHeightVideo() {
   var video = document.querySelector(".yt");
@@ -53,9 +54,7 @@ function step() {
   }
 }
 
-setTimeout(startAnimation, 5500);
-
-function startAnimation(){
+function animateLogo(){
   window.requestAnimationFrame(step);
 }
 
@@ -71,4 +70,17 @@ function createStar(left, bottom) {
   star.style.fontSize = starSize;
   star.classList.add("starPulse");
   footer.appendChild(star); 
+}
+
+function moveLogo() {
+  element.style.left = 'auto';
+  element.style.right = rightOffset + 'px';
+}
+
+function init() {
+  document.querySelector('header h1').classList.add("fadeInDown");
+  document.querySelector('header h2').classList.add("fadeIn");
+  document.querySelector('footer').classList.add("slideInUp");
+  document.querySelector('a.cta').classList.add("pulse");
+  setTimeout(animateLogo, 5500);
 }
